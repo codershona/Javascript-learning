@@ -1,7 +1,7 @@
 const nemos = ['nemos'];
 const fruits = ['strawberry','pineapple','apricot','pears','pomegranate','lychee','mango','banana','orange','apple'];
 
-const larger = new Array(100).fill('nemos');
+const larger = new Array(10000).fill('nemos');
 
 function findNemos(array) {
   let y0 = performance.now();
@@ -15,7 +15,5 @@ function findNemos(array) {
   console.log('Calling to find Nemos ' + (y1-y0) + ' miliseconds');
 }
 
-// findNemos(nemos);
-// findNemos(fruits);
 findNemos(larger);
 
