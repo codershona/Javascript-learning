@@ -220,7 +220,40 @@ findNemo2(nemo)
 findNemo3(nemo)
 
 
+// 
 
+const nemo = ['nemo'];
+
+function findNemo1(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 'nemo') {
+      console.log('Found NEMO!');
+    }
+  }
+}
+
+findNemo1(nemo);
+
+const findNemo2 = array => {
+  array.forEach(fish => {
+    if(fish === 'nemo') {
+      console.log('Find nemo');
+    }
+  })
+}
+
+
+const findNemo3 = array => {
+  for (let fish of array) {
+    if(fish === 'nemo') {
+      console.log('Find nemo');
+    }
+  }
+}
+
+findNemo2(nemo)
+
+findNemo3(nemo)
 
 
 
