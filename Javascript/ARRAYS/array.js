@@ -275,7 +275,8 @@ reverseThree('I am learning Data Structures Arrays')
 
 // Most important Interview question:
 // Merge Sorted Arrays:
-
+mergeSortedArrrays([0,3,4,31], [4,6,30]);
+// [0, 3, 4, 4, 6, 30, 31]
 
 
 
