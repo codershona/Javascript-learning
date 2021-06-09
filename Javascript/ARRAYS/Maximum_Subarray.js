@@ -22,7 +22,26 @@
 
 // ANSWER
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(numbers) {
+    var max_far = -Infinity;
+    var max_present = 0;
+    
+    // using for loop method
+    for (var e = 0; e < numbers.length; e++) {
+        const value = numbers[e];
+        // max_far = Math.max(value, max_present + value);
+        // max_present = Math.max(max_present, max_far);
+        max_present = Math.max(value, max_present + value);
+        max_far = Math.max(max_present, max_far);
+    }
+    return max_far;    
+};
 
+// Accepted
 
 
 
