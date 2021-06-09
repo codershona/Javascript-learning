@@ -325,19 +325,7 @@ mergeSortedArrrays([0,3,4], [4,6,30]);
 
 
 // mergeSortedArrrays([0,3,4,31], []);
-
-
-
-
-
-
-
 // mergeSortedArrrays([0,3,4,31], [4,6,30]);
-
-
-
-
-
 
 
 
