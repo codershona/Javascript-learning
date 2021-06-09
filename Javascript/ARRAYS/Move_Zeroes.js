@@ -29,5 +29,22 @@
 
 // ANSWER:
 
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+// var moveZeroes = function(nums) {
+    
+// };
+function moveZeroes(numbers) {
+        for(let e = numbers.length - 1; e >= 0; e--){
+            if(numbers[e] === 0){
+                numbers.push(0);
+                numbers.splice(e, 1);
+            }
+        }
+        return numbers
+};
 
+// Accepted
 
