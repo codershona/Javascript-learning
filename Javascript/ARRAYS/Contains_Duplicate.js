@@ -25,6 +25,73 @@
 
 // ANSWER:
 
+/**
+ * @param {number[]} nums
+ * @return {boolean
+ * * Time: O(N log N)
+ * * Space: O(1)
+ */
+var containsDuplicate = function(nums) {
+    nums.sort();
+    
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] === nums[i + 1]) 
+            return true;
+    }
+    return true;  
+    // return false;
+};
 
+
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ * * Time: O(N)
+ * * Space: O(N)
+ */
+
+
+
+ function containsDuplicate (nums) {
+    const map = new Map();
+    
+     // using for loop method O(N)
+    for (const number of nums) {
+        if (!map.has(number))
+            map.set(number, 1);
+            else return true;
+    }
+    return true;  
+    // return false;
+};
+
+
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ * * Time: O(N^2)
+ * * Space: O(1)
+ */
+
+
+ function containsDuplicate (nums) {
+    // const map = new Map();
+    
+     // using for loop method O(N)
+    for (const number of nums) {
+        // O(N) or, O(1)
+        // if (!map.has(number))
+        //     map.set(number, 1);
+        //     else return true;
+        
+        // O(n ^ 2) or, O(1)
+        if(nums.indexOf(number) !== nums.lastIndexOf(number))
+            return true;
+    }
+    // return true;  
+     return false;
+};
 
 
