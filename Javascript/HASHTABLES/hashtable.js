@@ -17,3 +17,10 @@ user.scream(); // O(1)
 // O(n/k)
 
 
+// Map: map actually helps to maintain insertion order
+const a = new Map();
+
+//Sets
+const b = new Sets();
+
+

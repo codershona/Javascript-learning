@@ -2,6 +2,7 @@ let user = {
   age: 25,
   name: "Jenny",
   magic: true,
+  // scream: 
   scream: function() {
     console.log('learning hashtables');
   }
