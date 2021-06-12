@@ -1,86 +1,58 @@
+// first recurring character
 
-class HashTable {
-  constructor(size){
-    this.data = new Array(size);
-  }
+// Most important interview question which came in google
 
-  _hash(key) {
-    let hash = 0;
-    for (let i =0; i < key.length; i++){
-        hash = (hash + key.charCodeAt(i) * i) %
-        this.data.length
-        console.log(hash);
-    }
-    return hash;
-  } // this is very fast because it is O(1)
+//Google Question
+//Given an array = [2,5,1,2,3,5,1,2,4]:
+//It should return 2
 
-  // creating set method 
-   set(key, value) {
-      let address = this._hash(key);
-      if (!this.data[address]) {
-        this.data[address] = [];
-        // this.data[address].push([key, value]);
-        // console.log(this.data);
-      // } else {
-      //   this.data[address].push([key, value]);
-      // }
-         } 
-        this.data[address].push([key, value]);
-        return this.data;
-  }  // O(1)
+//Given an array = [2,1,1,2,3,5,1,2,4]:
+//It should return 1
 
-  // creating get method
-  get(key) {
-    let address = this._hash(key);
-    const currentBuckets = this.data[address];
-    console.log(currentBuckets);
-    // if (currentBuckets.length) {
-      if (currentBuckets) {
-     // using for loop
-     for(let i = 0; i < currentBuckets.length; i++) {
-       if(currentBuckets[i] [0] === key) {
-         return currentBuckets[i][1];
-       }
+//Given an array = [2,3,4,5]:
+//It should return undefined
+
+function firstRecurringCharacter(input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = i + 1; j < input.length; j++) {
+      // if statement and does that equal to input j
+      if (input[i] === input[j]) {
+        return input[i];
       }
-    } // O(1)
-    return undefined;
+    }
   }
+  // after doing this all the work if nothing happens we can defined it as undefined
+  return undefined;
+} // O(N^2)
 
-  // keys() methods:
-   keys() {
-     const keysArray = [];
-     for (let i = 0; i < this.data.length; i++) {
-       if (this.data[i]) {
-        //  console.log(this.data[i][0][0]);
-         keysArray.push(this.data[i][0][0])
-       }
-     }
-     return keysArray;
-   }
+// 2nd function:
+function firstRecurringCharacterTwo (input) {
+  let map = {};
+
+  // for loops
+  for (let i = 0; i < input.length; i++) {
+    // console.log(map[input[i]]);
+      // console.log(undefined);
+       //  console.log(map[2]);
+    // if(map[input[i]]) {
+       if(map[input[i]] !== undefined) {
+      return input[i];
+    } else {
+      map[input[i]] = i;
+    }
+    console.log(map);
+  }
+  //  console.log(map);
+  return undefined;
 }
 
-// for in loops methods is a slow
-// for in loops();
+firstRecurringCharacterTwo([2,5,1,2,3,5,1,2,4]);
 
-//  const myHashTable = new HashTable(50);
- const myHashTable = new HashTable(500);
-// const myHashTable = new HashTable(2);
+// firstRecurringCharacter([1,5,1,2,3,5,1,2,4]);
+// firstRecurringCharacter([]);
+// firstRecurringCharacter([2,5,1,2,3,5,1,2,4]);
+// firstRecurringCharacter([2,5]);
 
-// set methods:
-// myHashTable.set('grape', 10000)
-// myHashTable.set('grapess', 10000)
-myHashTable.set('grapes', 10000)
-// myHashTable.set('apples', 9)
-myHashTable.set('apples', 55)
-myHashTable.set('pears', 3)
-// myHashTable.set('apple', 15)
-
-// get methods:
-// myHashTable.get('grapes')
-// myHashTable.get('apples')
-myHashTable.keys();
-
-// _hash methods:
-// myHashTable._hash('grapes');
-
-
+//Bonus... What if we had this:
+// [2,5,5,2,3,5,1,2,4]
+// return 5 because the pairs are before 2,2
