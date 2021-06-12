@@ -35,23 +35,38 @@ class HashTable {
   get(key) {
     let address = this._hash(key);
     const currentBuckets = this.data[address];
-    // console.log(currentBuckets);
+    console.log(currentBuckets);
     // if (currentBuckets.length) {
       if (currentBuckets) {
      // using for loop
      for(let i = 0; i < currentBuckets.length; i++) {
-       if(currentBuckets[i][0] === key) {
+       if(currentBuckets[i] [0] === key) {
          return currentBuckets[i][1];
        }
       }
     } // O(1)
     return undefined;
-
   }
+
+  // keys() methods:
+   keys() {
+     const keysArray = [];
+     for (let i = 0; i < this.data.length; i++) {
+       if (this.data[i]) {
+        //  console.log(this.data[i][0][0]);
+         keysArray.push(this.data[i][0][0])
+       }
+     }
+     return keysArray;
+   }
 }
 
-// const myHashTable = new HashTable(50);
-const myHashTable = new HashTable(2);
+// for in loops methods is a slow
+// for in loops();
+
+//  const myHashTable = new HashTable(50);
+ const myHashTable = new HashTable(500);
+// const myHashTable = new HashTable(2);
 
 // set methods:
 // myHashTable.set('grape', 10000)
@@ -59,16 +74,16 @@ const myHashTable = new HashTable(2);
 myHashTable.set('grapes', 10000)
 // myHashTable.set('apples', 9)
 myHashTable.set('apples', 55)
+myHashTable.set('pears', 3)
 // myHashTable.set('apple', 15)
 
 // get methods:
 // myHashTable.get('grapes')
-myHashTable.get('apples')
+// myHashTable.get('apples')
+myHashTable.keys();
 
 // _hash methods:
 // myHashTable._hash('grapes');
-
-
 
 
 
