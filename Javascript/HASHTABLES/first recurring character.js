@@ -24,6 +24,7 @@ function firstRecurringCharacter(input) {
   // after doing this all the work if nothing happens we can defined it as undefined
   return undefined;
 } // O(N^2)
+// O(1)
 
 // 2nd function:
 function firstRecurringCharacterTwo (input) {
@@ -44,7 +45,7 @@ function firstRecurringCharacterTwo (input) {
   }
   //  console.log(map);
   return undefined;
-}
+} // O(n)
 
 firstRecurringCharacterTwo([2,5,1,2,3,5,1,2,4]);
 
