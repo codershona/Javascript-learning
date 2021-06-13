@@ -31,7 +31,7 @@ class LinkedList {
     this.length++;
     return this;
   }
-  // printlist() method
+  // printlist() function method
   printList() {
     const array = [];
     let currentNode = this.head;
