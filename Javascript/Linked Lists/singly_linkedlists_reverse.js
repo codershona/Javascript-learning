@@ -1,5 +1,7 @@
  // reverse() method:
   // interviewer could asked question liked this about reverse method: e have a linked lists here, how would you go about reversing this list? If I have a list over here, that is one 10, 16, 18, how can you make the list? the linked lists that go from 88 to 16 to 10 to one, how would you reverse it and flip it? 
+
+
 class LinkedList {
     constructor(value) {
         this.head = {
@@ -82,7 +84,6 @@ class LinkedList {
         return this.head;
       }
       let first = this.head;
-      this.tail = this.head;
       let second = first.next;
       while(second) {
         const temp = second.next;
@@ -90,9 +91,6 @@ class LinkedList {
         first = second;
         second = temp;
       }
-      this.head.next = null;
-      this.head = first;
-      return this.printList();
     }
 }
 
