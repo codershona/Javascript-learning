@@ -1,58 +1,67 @@
-// stack and queues : how javascipt works?
-// const a = 1;
-// const b = 10;
-// const c = 100; // memory leak
+// Stack Implementation 
+// Data Structures: Stacks Implementation-linked list
+// creating our own Stacks
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
 
-// call stack
-// console.log('1');
-// console.log('2');
-// console.log('3');
+class Stack {
+  constructor(){
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+  }
+  // peek method
+  peek() {
+    return this.top;
+  }
+  // push method
+  push(value) {
+   const newNode = new Node(value);
+   if (this.length === 0) {
+     this.top = newNode;
+     this.bottom = newNode;
+   } else {
+     const holdingPointer = this.top;
+     this.top = newNode;
+     this.top.next = holdingPointer;
+   }
+   this.length++;
+   return this;
+  }
+  // pop method
+  pop() {
+   if (!this.top) {
+     return null;
+   }
+   if (this.top === this.bottom) {
+     this.bottom = null;
+   }
+   // const holdingPointer = this.top;
+   this.top = this.top.next;
+   this.length--;
+   return this
+   // return holdingPointer;
+  }
+  //isEmpty
 
-// const one = () => {
-//   const two = () => {
-//     console.log('4');
-//   }
-//   two();
-// }
+}
 
-// console.log('4');
-// two();
-// one();
-// call stack
-// recursion
-// function foo() {
-//   foo()
-// }
-// foo();
-
-// asynchronuous
-console.log('1'); 
-setTimeout(() => {
-  console.log('2');
-  // }, 2000);
-}, 0);
-console.log('3'); 
-console.log('2'); 
-// callback();
-
-// setTimeout(() => {
-//   console.log('2');
-// }, 2000);
-
-// call stack
-// setTimeout(), 2000
-
-// web api's
-// callback();
-
-// callback queue
-
-
-// event loop
-// event listeners 
-element.addEventListener('click', () => {
-  console.log('click');
-});
+const myStack = new Stack();
+// myStack.peek();
+myStack.push('google');
+myStack.push('udemy');
+myStack.push('discord');
+myStack.peek();
+myStack.pop();
+myStack.pop();
+myStack.pop();
+//Discord
+//Udemy
+//google
 
 
 
