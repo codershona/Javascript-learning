@@ -1,5 +1,6 @@
 // Stack Implementation 
 // Data Structures: Stacks Implementation-linked list
+// creating our own Stacks
 class Node {
   constructor(value){
     this.value = value;
