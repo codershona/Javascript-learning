@@ -41,13 +41,9 @@ console.log('2');
 
 // call stack
 // setTimeout(), 2000
-
 // web api's
 // callback();
-
 // callback queue
-
-
 // event loop
 // event listeners 
 element.addEventListener('click', () => {
