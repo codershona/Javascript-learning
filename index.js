@@ -1,61 +1,97 @@
-// Queue Implementation
-// Data Structures: Queue Implementation
-
+// Data Structures: Trees-exercise:
 class Node {
   constructor(value) {
+    this.left = null;
+    this.right = null;
     this.value = value;
-    this.next = null;
   }
 }
 
-class Queue {
+class BinarySearchTree {
   constructor(){
-    this.first = null;
-    this.last = null;
-    this.length = 0;
-  }
-  peek() {
-    return this.first;
-  }
-  enqueue(value) {
+    this.root = null;
+ }
+  insert(value) {
+    // insert method function
+    //Code here
     const newNode = new Node(value);
-    if (this.length === 0) {
-      this.first = newNode;
-      this.last = newNode;
+
+    if (this.root === null) {
+      this.root = newNode;
     } else {
-      this.last.next = newNode;
-      this.last = newNode
+      let currentNode = this.root;
+      while(true) {
+        // if statement ...
+        if (value < currentNode.value) {
+          // left
+          if (!currentNode.left) {
+            currentNode.left = newNode;
+            return this;
+          }
+          currentNode = currentNode.left;
+        } else {
+          // right
+          if (!currentNode.right) {
+            currentNode.right = newNode;
+            return this; 
+          }
+          currentNode = currentNode.right;
+        }
+      }
+    }     
+ }
+
+  lookup(value) {
+    //Code here
+    if (!this.root) {
+      return false;
     }
-    this.length++
-    return this;
+    let currentNode = this.root;
+    while(currentNode) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if(value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else if(currentNode.value === value) {
+        return currentNode;
+      }
+    }
+     return false;
   }
-  dequeue() {
-    // if there is no first item
-    if (!this.first) {
-      return null;
-    }
-    if (this.first === this.last) {
-      this.last === null;
-    }
-    const holdingPointer = this.first;
-    this.first = this.first.next;
-    this.length--;
-    return this;
+  // remove
+  remove(value) {
+    // remove method
+    // how to implementthe remove method in here?
+    // if we wnat to remove an item from a tree how we can do it.
+    
   }
-  //isEmpty;
+
 }
 
-const myQueue = new Queue();
-myQueue.peek();
-myQueue.enqueue('Joy');
-myQueue.enqueue('Matt');
-myQueue.enqueue('Pavel');
-// myQueue.peek();
-myQueue.dequeue();
-myQueue.dequeue();
-myQueue.dequeue();
-// myQueue.peek();
-//Joy
-//Matt
-//Pavel
-//Samir
+const tree = new BinarySearchTree();
+tree.insert(9)
+tree.insert(4)
+tree.insert(6)
+tree.insert(20)
+tree.insert(170)
+tree.insert(15)
+tree.insert(1)
+tree.lookup(9);
+tree.lookup(20);
+// tree.lookup(171);
+// JSON.stringify(traverse(tree.root))
+
+//     9
+//  4     20
+// 1  6  15  170
+
+function traverse(node) {
+  const tree = { value: node.value };
+  tree.left = node.left === null ? null : traverse(node.left);
+  tree.right = node.right === null ? null : traverse(node.right);
+  return tree;
+}
+
+
+
+
