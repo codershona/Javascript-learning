@@ -1,6 +1,7 @@
 // Remove method
 // how to implementthe remove method in here?
 // if we wnat to remove an item from a tree how we can do it.
+// (less imprtant for interview this method)
 class Node {
   constructor(value){
     this.left = null;
