@@ -1,96 +1,67 @@
-// Data Structures: Trees-exercise:
-class Node {
-  constructor(value) {
-    this.left = null;
-    this.right = null;
-    this.value = value;
-  }
-}
+// Data Structures: Graphs
+// Graph Implementation
 
-class BinarySearchTree {
-  constructor(){
-    this.root = null;
- }
-  insert(value) {
-    // insert method function
-    //Code here
-    const newNode = new Node(value);
+class Graph { 
+  constructor() { 
+    this.numberOfNodes = 0;
+    this.adjacentList = {
+    }; 
+  } 
+  addVertex(node)  { 
+    // code here
+    this.adjacentList[node] = [];
+    this.numberOfNodes++;
+  } 
+  addEdge(node1, node2) { 
+    //undirected Graph
+    // code here 
+    this.adjacentList[node1].push(node2);
+    this.adjacentList[node2].push(node1);
+  } 
+  showConnections() { 
+    const allNodes = Object.keys(this.adjacentList); 
+    for (let node of allNodes) { 
+      let nodeConnections = this.adjacentList[node]; 
+      let connections = ""; 
+      let vertex;
+      for (vertex of nodeConnections) {
+        connections += vertex + " ";
+      } 
+      console.log(node + "-->" + connections); 
+    } 
+} 
+} 
 
-    if (this.root === null) {
-      this.root = newNode;
-    } else {
-      let currentNode = this.root;
-      while(true) {
-        // if statement ...
-        if (value < currentNode.value) {
-          // left
-          if (!currentNode.left) {
-            currentNode.left = newNode;
-            return this;
-          }
-          currentNode = currentNode.left;
-        } else {
-          // right
-          if (!currentNode.right) {
-            currentNode.right = newNode;
-            return this; 
-          }
-          currentNode = currentNode.right;
-        }
-      }
-    }     
- }
+const myGraph = new Graph();
+myGraph.addVertex('0');
+myGraph.addVertex('1');
+myGraph.addVertex('2');
+myGraph.addVertex('3');
+myGraph.addVertex('4');
+myGraph.addVertex('5');
+myGraph.addVertex('6');
+myGraph.addEdge('3', '1'); 
+myGraph.addEdge('3', '4'); 
+myGraph.addEdge('4', '2'); 
+myGraph.addEdge('4', '5'); 
+myGraph.addEdge('1', '2'); 
+myGraph.addEdge('1', '0'); 
+myGraph.addEdge('0', '2'); 
+myGraph.addEdge('6', '5');
 
-  lookup(value) {
-    //Code here
-    if (!this.root) {
-      return false;
-    }
-    let currentNode = this.root;
-    while(currentNode) {
-      if (value < currentNode.value) {
-        currentNode = currentNode.left;
-      } else if(value > currentNode.value) {
-        currentNode = currentNode.right;
-      } else if(currentNode.value === value) {
-        return currentNode;
-      }
-    }
-     return false;
-  }
-  // remove
-  remove(value) {
-    // remove method
-    // how to implementthe remove method in here?
-    // if we wnat to remove an item from a tree how we can do it.
-    
-  }
+myGraph.showConnections(); 
+//Answer:
+// 0-->1 2 
+// 1-->3 2 0 
+// 2-->4 1 0 
+// 3-->1 4 
+// 4-->3 2 5 
+// 5-->4 6 
+// 6-->5
 
-}
 
-const tree = new BinarySearchTree();
-tree.insert(9)
-tree.insert(4)
-tree.insert(6)
-tree.insert(20)
-tree.insert(170)
-tree.insert(15)
-tree.insert(1)
-tree.lookup(9);
-tree.lookup(20);
-// tree.lookup(171);
-// JSON.stringify(traverse(tree.root))
 
-//     9
-//  4     20
-// 1  6  15  170
 
-function traverse(node) {
-  const tree = { value: node.value };
-  tree.left = node.left === null ? null : traverse(node.left);
-  tree.right = node.right === null ? null : traverse(node.right);
-  return tree;
-}
 
 
 
