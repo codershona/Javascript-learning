@@ -1,68 +1,25 @@
-// Data Structures: Graphs
-// Graph Implementation
+// Algorithms : Recursion
+// anatomy of Recursion
+let counter = 0;
+function inception() {
+  // conditional statement
+  console.log(counter);
+  // debugger
+  if (counter > 3) {
+   return 'finish!';
+  }
+   counter++;
+   return inception();
+  // console.log('why?');
+}
 
-class Graph { 
-  constructor() { 
-    this.numberOfNodes = 0;
-    this.adjacentList = {
-    }; 
-  } 
-  addVertex(node)  { 
-    // code here
-    this.adjacentList[node] = [];
-    this.numberOfNodes++;
-  } 
-  addEdge(node1, node2) { 
-    //undirected Graph
-    // code here 
-    this.adjacentList[node1].push(node2);
-    this.adjacentList[node2].push(node1);
-  } 
-  showConnections() { 
-    const allNodes = Object.keys(this.adjacentList); 
-    for (let node of allNodes) { 
-      let nodeConnections = this.adjacentList[node]; 
-      let connections = ""; 
-      let vertex;
-      for (vertex of nodeConnections) {
-        connections += vertex + " ";
-      } 
-      console.log(node + "-->" + connections); 
-    } 
-} 
-} 
+// inception(inception(inception(inception('finshed'))));
+inception(); // undefined
 
-const myGraph = new Graph();
-myGraph.addVertex('0');
-myGraph.addVertex('1');
-myGraph.addVertex('2');
-myGraph.addVertex('3');
-myGraph.addVertex('4');
-myGraph.addVertex('5');
-myGraph.addVertex('6');
-myGraph.addEdge('3', '1'); 
-myGraph.addEdge('3', '4'); 
-myGraph.addEdge('4', '2'); 
-myGraph.addEdge('4', '5'); 
-myGraph.addEdge('1', '2'); 
-myGraph.addEdge('1', '0'); 
-myGraph.addEdge('0', '2'); 
-myGraph.addEdge('6', '5');
+inception(); // return the finish!
 
-myGraph.showConnections(); 
-//Answer:
-// 0-->1 2 
-// 1-->3 2 0 
-// 2-->4 1 0 
-// 3-->1 4 
-// 4-->3 2 5 
-// 5-->4 6 
-// 6-->5
-
-
-
-
-
-
-
+// identify the base case
+// identify the recursive case 
+// *greater
+// get closer to closer and return when it needed, usually you have 2 returns
 
