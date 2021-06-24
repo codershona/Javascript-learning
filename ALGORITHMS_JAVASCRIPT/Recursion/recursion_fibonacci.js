@@ -7,17 +7,32 @@
 
 //For example: fibonacciRecursive(6) should return 8
 
-function fibonacciIterative(n){
+function fibonacciIterative(n){ // O(n)
   //code here;
+  let arr = [0, 1];
+  for (let i = 2; i < n + 1; i++) {
+    arr.push(arr[i - 2] + arr[i - 1]);
+  }
+  return arr[n];
 }
-fibonacciIterative(3);
+// fibonacciIterative(3);
+fibonacciIterative(8);
+fibonacciIterative(0);
+fibonacciIterative(1);
 
-function fibonacciRecursive(n) {
+function fibonacciRecursive(n) { // O(2^n)
   //code here;
+  // if (n === 2) {
+    if (n < 2) {
+    return n;
+  }
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
 }
 
-fibonacciRecursive(3)
-
+// fibonacciRecursive(3);
+fibonacciRecursive(8);
+fibonacciRecursive(30);
+// fibonacciRecursive(0);
 
 
 
