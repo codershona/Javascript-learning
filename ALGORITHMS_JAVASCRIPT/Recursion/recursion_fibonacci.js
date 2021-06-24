@@ -33,7 +33,9 @@ function fibonacciRecursive(n) { // O(2^n)
 fibonacciRecursive(8);
 fibonacciRecursive(30);
 // fibonacciRecursive(0);
-
+// recusrive can keep your code dry, readable and simpler
+// recursion is a powerful technique
+// 
 
 
 
