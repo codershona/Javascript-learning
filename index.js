@@ -1,40 +1,21 @@
-// Recursion-Fibonacci sequence:
-
-// Given a number N return the index value of the Fibonacci sequence, where the sequence is:
-
-// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ...
-// the pattern of the sequence is that each value is the sum of the 2 previous values, that means that for N=5 → 2+3
-
-//For example: fibonacciRecursive(6) should return 8
-
-function fibonacciIterative(n){ // O(n)
-  //code here;
-  let arr = [0, 1];
-  for (let i = 2; i < n + 1; i++) {
-    arr.push(arr[i - 2] + arr[i - 1]);
-  }
-  return arr[n];
-}
-// fibonacciIterative(3);
-fibonacciIterative(8);
-fibonacciIterative(0);
-fibonacciIterative(1);
-
-function fibonacciRecursive(n) { // O(2^n)
-  //code here;
-  // if (n === 2) {
-    if (n < 2) {
-    return n;
-  }
-  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
-}
-
-// fibonacciRecursive(3);
-fibonacciRecursive(8);
-fibonacciRecursive(30);
-// fibonacciRecursive(0);
+// Sorting
+// The Issue With sort()
+const letters = ['a', 'b', 'z', 'e', 'r', 'b'];
+const basket = [2, 65, 34, 2, 1, 7, 8];
+// letters.sort();
+// basket.sort();
+letters.sort(function (a, b) {
+  return a.localeCompare(b);
+}); // 'a', 'b' here basket will not work.
 
 
+basket.sort(function (x, y) {
+  return x - y;
+});
 
-
-
+// '65'.charCodeAt(0);
+// '2'.charCodeAt(0);
+// console.log('65'.charCodeAt(0));
+// console.log('2'.charCodeAt(0));
+// console.log('34'.charCodeAt(0));
+// console.log('7'.charCodeAt(0));
