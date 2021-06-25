@@ -1,21 +1,27 @@
-// Sorting
-// The Issue With sort()
-const letters = ['a', 'b', 'z', 'e', 'r', 'b'];
-const basket = [2, 65, 34, 2, 1, 7, 8];
-// letters.sort();
-// basket.sort();
-letters.sort(function (a, b) {
-  return a.localeCompare(b);
-}); // 'a', 'b' here basket will not work.
+// Bubble Sort:
+// bubble sort is one fo the simplest sorting algorithm and it is least efficient
+// what do you think the time complexity and space complexity of the sorting algorithm?
+// 
+const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
+function bubbleSort(array) {
+  const length = array.length;
 
-basket.sort(function (x, y) {
-  return x - y;
-});
+  // for loop method
+  for (let i = 0; i < length; i++) {
+    for ( let j = 0; j < length; j++) {
+      if (array[j] > array[j + 1]) {
+        // swap numbers
+        // let tempory_variable = array[i];
+        let tempory_variable = array[j];
+        array[j] = array[j + 1];
+        // array[j + 1] = array[j];
+         array[j + 1] = tempory_variable;
+      }
+    }
+  }
+}
 
-// '65'.charCodeAt(0);
-// '2'.charCodeAt(0);
-// console.log('65'.charCodeAt(0));
-// console.log('2'.charCodeAt(0));
-// console.log('34'.charCodeAt(0));
-// console.log('7'.charCodeAt(0));
+bubbleSort(numbers);
+console.log(numbers);
+
