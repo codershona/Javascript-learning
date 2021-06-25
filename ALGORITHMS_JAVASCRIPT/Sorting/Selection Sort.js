@@ -1,5 +1,5 @@
 // Selection Sort:
-// time complexity O(n^2) or O(n)
+// time complexity O(n^2) or O(n^2)
 // space complexity O(1)
 
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
