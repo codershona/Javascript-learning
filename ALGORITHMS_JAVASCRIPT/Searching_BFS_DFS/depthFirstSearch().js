@@ -375,6 +375,7 @@ class BinarySearchTree {
 }
 
 function traversePreOrder(node, list){
+  // console.log(node.value);
   list.push(node.value);
   if(node.left) {
     traversePreOrder(node.left, list);
@@ -386,6 +387,7 @@ function traversePreOrder(node, list){
 }
 
 function traverseInOrder(node, list){
+  // console.log(node.value);
   if(node.left) {
     traverseInOrder(node.left, list);
   }
@@ -397,6 +399,7 @@ function traverseInOrder(node, list){
 }
 
 function traversePostOrder(node, list){
+  // console.log(node.value);
   if(node.left) {
     traversePostOrder(node.left, list);
   }
