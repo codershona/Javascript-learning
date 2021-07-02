@@ -13,3 +13,20 @@ fibonacci(6)
 fibonacci(7) // increasing 
 fibonacci(21) // increasing 
 fibonacci(1) // decreasing
+
+
+
+
+// dynamic programming tips:
+
+// Dynamic Programming = Divide & Conquer + Memoization
+
+// Can be divided into sub-problem?
+// Recursive Solution
+// Are there repetitive subproblems?
+// Memorize Subproblems.
+// Demand a raise from your boss.
+
+
+
+
