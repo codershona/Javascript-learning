@@ -1,4 +1,4 @@
-// fizzbuzz
+// fizzbuzz(EASY)
 /**
  * @param {number} n
  * @return {string[]}
