@@ -1,0 +1,6 @@
+Fizzbuzz
+
+Palindrome
+
+Fibonacci Sequence
+
