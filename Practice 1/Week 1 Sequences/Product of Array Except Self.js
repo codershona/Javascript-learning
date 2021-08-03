@@ -31,3 +31,26 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
 SOLUTION:
 
 
+var productExceptSelf = (nums) => {
+    let product = [];
+    nums.reduce((sumOne, valueOne) => {
+      product.push(sumOne)
+      sumOne *= valueOne
+      return sumOne        
+    }, 1);
+
+    product.reduceRight((sumOne, valueOne, indexOne) => {
+      product[indexOne] = product[indexOne] * sumOne
+      sumOne *= nums[indexOne]
+    return sumOne
+    }, 1);
+    return product;
+};
+
+
+Explanation: 
+
+I had use variable as es6 arrow function which has productExceptSelf name and nums is a parameter. let variable has empty array. num.reduce is a array.prototype.reduce method and its a Array reduce() function and this will executes a reducer function for each value of an array. This function has 2 arguments like sumOne, valueOne which is calling Arrow Functions Return Value by using push method or Array.prototype.push() method which will adds one or more elements to the end of an array and returns the new length of the array like, product is a object or array prototype that is using push to add the sumOne elements which will end of the each array and return the new length in the array. Then sumOneis multiplication assignment valueOne that returns sumOne with 1. 
+
+
+Object or arrayprototype product reduceRight() method executes a reducer function for each value of an array , from right to left. It has three arguments thats calls the return value. product object has inedexOne as an array which is equal prodect with indexOne array multiplication sumOne and this sumOne multiplication assignment with nums parameter with indeOne array and returns sumOne with 1 and again return product which was an empty array.
