@@ -39,4 +39,37 @@ s consists of parentheses only '()[]{}'.
 
 
 // Solution:
+// I am using stack for this to solve the problem.
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+const isValid = (str) => {
+    let closedOne = [];
+    let closedTwo = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '(' || str[i] === '{' || str[i] === '[' ) {
+            // usign push method 
+            closedOne.push(str[i]);
+            // now I will use pop method
+        // } else if (closedTwo[closedOne.pop() !== str[i]]) {
+            } else if (closedTwo[closedOne.pop()] !== str[i]) {
+            return false;
+        }
+    }
+    return closedOne.length ? 0:1
+};
+
+console.log(isValid);
+
+
+
+
+
+
 
