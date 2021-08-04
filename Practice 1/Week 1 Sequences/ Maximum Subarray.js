@@ -31,9 +31,7 @@ Constraints:
 
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-
-
-
+Solution:
 
 var maxSubArray = function(numbers) {
     var max_far = -Infinity;
@@ -50,9 +48,10 @@ var maxSubArray = function(numbers) {
     return max_far;    
 };
 
-
 Explanation :
+First of all, I am using var variables with maxSubArray name and calling function with numbers parameters. Then, declaring var with max_far which stores the value -Infinity and max_present which is storing 0 value. By using for loop method statement 1 of the var variable has e equal 0 which also  sets a variable before the loop starts, statement 2 has e less than numbers parameters dot length and this defines the condition for the loop to run and statement 3 e as a increment which basically increases a value (e++) each time the code block in the loop has been executed. 
 
+In my second point of the view, max_present object has by usingmath object methods and here Math.max returns the has the highest value in this list of arguments with three parametrs those are value, max_present which us addition to value parameter. Again, max_far object has Math.max which returns the highest value from the list of the arguments and it also has two parameters with max_present and max_far. Finally it returns max_far. 
 
 
 
