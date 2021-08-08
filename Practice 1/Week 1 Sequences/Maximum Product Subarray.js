@@ -28,6 +28,26 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 
 SOLUTION:
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const maxProduct = (nums) => {
+    let output = -Number.MAX_VALUE;
+    let minimumArray = 1;
+    let maximumArray = 1;
+    // using for....of method
+    for (let numberVariable of nums) {
+        [minimumArray, maximumArray] = [
+            Math.min(numberVariable, minimumArray * numberVariable, maximumArray * numberVariable),
+            Math.max(numberVariable, minimumArray * numberVariable, maximumArray * numberVariable),         
+        ];
+        output = Math.max(output, maximumArray);
+    }
+    return output;    
+};
+
+console.log(maxProduct);
 
 
 
