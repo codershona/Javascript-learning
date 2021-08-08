@@ -31,8 +31,33 @@ intervals[i].length == 2
 SOLUTION:
 
 
+/**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+const merge = (intervals) => {
+    intervals.sort((x, y) => x[0] - y[0]);
+    const output = [intervals[0]];
+    // using For Of Loop method
+     for(let mergedInterval of intervals) {
+         prev_Intervals = output[output.length - 1]
+         // using if conditional statement
+         if (prev_Intervals[1] >= mergedInterval[0]) {
+             prev_Intervals[1] = Math.max(mergedInterval[1], prev_Intervals[1])
+         } else {
+         output.push(mergedInterval)
+        }             
+     } 
+      return output;
+};
+
+console.log(merge);
+
+
 
 Explanation:
+
+
 
 
 
