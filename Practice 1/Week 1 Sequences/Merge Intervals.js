@@ -53,7 +53,11 @@ const merge = (intervals) => {
 
 console.log(merge);
 
+// for of statement loops through the values of an iterable object Method
 
+// for (variable of iterable) {
+//   // code block to be executed
+// }
 
 Explanation:
 
