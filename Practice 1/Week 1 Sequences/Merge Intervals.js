@@ -61,6 +61,8 @@ console.log(merge);
 
 Explanation:
 
+Here I had const variable which has merge object and that has intervals parameters with arrow function sand this execute, but the intervals parameters is using with array.prototytpe.sort() method which has two value that are x and y using arrow function with x 0 array substraction y with 0 array. The const variable has output objects equal array intervals parameters with 0 array. Next we can use for...of loop method. Here, the let mergedInterval is a variable which is of the intervals parameter that declare iteration. To execute, the prev_Intervals objects is equal output object with output.length array of members length which returns the value with substraction 1. Now, we can use if conditional statement, where it has prev_Intervals object with 1 array >= Greater than or equal operators with mergedInterval variable with 0 array. That has another condition is prev_iNTERVALS OBJECT WITH 1 ARRAY EQUAL Math members max method whichhas two valuye items that has mergedInterval object variable with 1 array and prev_Intervals items with 1 array. Next we use else to excute the false statement with conditions that has output object member push() method and it has mergedInterval variable. Finally it returns output object. 
+
 
 
 
