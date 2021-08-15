@@ -34,7 +34,32 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
 
 SOLUTION:
 
-
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+const reverseList = (head) => {
+    // execute the code 
+    // earlier + next are objectname
+    // . is member operator
+    let earlier = null;
+    // using while conditional statement
+    while(head) {
+        // execute the code
+        const next = head.next
+        head.next = earlier
+        earlier = head
+        head = next
+    }
+    return earlier;
+};
 
 
 EXPLANATION:
