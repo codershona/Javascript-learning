@@ -38,6 +38,38 @@ nums is guaranteed to be rotated at some pivot.
 
 SOLUTION:
 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+const search = (nums, target) => {
+    let length = nums.length;
+    // execute the code
+    if (length === 0) return -1;
+    
+    let indexOne = -1;
+    let head = 0;
+    let tail = length - 1;
+    let middle;
+    
+    // using loop while statement 
+    while(head <= tail) {
+        middle = Math.floor((head + tail) / 2);
+        // if condition
+        if (nums[middle] === target) {
+            // execute the code
+            indexOne = middle;
+            break;
+        } else if ((nums[head] <= target && target < nums[middle]) || (nums[head] > nums[middle] && (nums[head] <= target || target < nums[middle]))) {
+            // execute the code
+            tail = middle - 1;
+        } else {
+            head = middle + 1;
+        }        
+    } 
+    return indexOne;
+};
 
 
 
