@@ -41,8 +41,34 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
 
 SOLUTION:
 
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
 
-
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+const hasCycle = (head) => {
+    let index = head;
+    let cycle = head;
+    // using while loop conditional statement
+    while (index && index.next) {
+        // to execute the code
+        index = index.next.next;
+        cycle = cycle.next;
+        // using if statement
+        if (index == cycle) {
+            // to execute the code
+            return true;
+        }
+    }
+    return false;
+};
 EXPLANATION:
 
 
