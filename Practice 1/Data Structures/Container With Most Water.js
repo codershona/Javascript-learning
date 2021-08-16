@@ -38,6 +38,31 @@ n == height.length
 
 SOLUTION:
 
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+const maxArea = (height) => {
+    let index = 0;
+    let point = height.length - 1;
+    let maximum = -Infinity;
+    // using while loop conditional statement
+    while (index < point) {
+        const minimum = Math.min(height[index], height[point]);
+        // using array.prototype.max() method
+        maximum = Math.max(maximum, minimum * [point - index]);
+        // using if conditional statement
+        if (height[index] < height[point]) {
+            // block code to be executed
+            index++;
+            // using else statement
+        } else {
+            // block code to be executed
+            point--;
+        }        
+    }
+    return maximum;    
+};
 
 
 
