@@ -29,7 +29,32 @@ s consists of only uppercase English letters.
 
 SOLUTION:
 
-
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {number}
+ */
+const characterReplacement = (s, k) => {
+    let rightSide = 0;
+    let leftSide = 0;
+    let maxCharCount = 0;
+    const object = {};
+    // using while loop method
+    while(rightSide < s.length) {
+        const character = s[rightSide];
+        object[character] = object[character] ? object[character] + 1 : 1;
+        // if statement
+        if (object[character] > maxCharCount) maxCharCount = object[character];
+        // if statement
+        if (rightSide - leftSide + 1 - maxCharCount > k) {
+            //execute the code
+            object[s[leftSide]]--;
+            leftSide++;
+        }
+        rightSide++;
+    }
+    return rightSide - leftSide;    
+};
 
 
 
