@@ -1,7 +1,13 @@
 // Unique Email Addresses (EASY)
+// Arrays & Strings
+// Median Employee Scores
+// What is this?
+// Google - 6.97
+// Facebook - 5.81
+// Amazon - 5.27
+// Microsoft - 5.36
 
-
-
+QUESTION:
 
 Every valid email consists of a local name and a domain name, separated by the '@' sign. Besides lowercase letters, the email may contain one or more '.' or '+'.
 

@@ -1,5 +1,13 @@
 // Fruit Into Baskets (MEDIUM)
+// Arrays & Strings
+// Median Employee Scores
+// What is this?
+// Google - 6.97
+// Facebook - 5.81
+// Amazon - 5.27
+// Microsoft - 5.36
 
+QUESTION:
 
 You are visiting a farm that has a single row of fruit trees arranged from left to right. The trees are represented by an integer array fruits where fruits[i] is the type of fruit the ith tree produces.
 
