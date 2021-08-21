@@ -16,5 +16,7 @@ function greeting(parameterVariable) {
 // Description ====> 	A single line of text containing one or more space-separated words.
 
 
-// Day 2:
+// Day 2: Data Types
+
+
 
