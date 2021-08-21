@@ -36,7 +36,28 @@ s consists of English letters, digits, symbols and spaces.
 SOLUTION:
 
 
-
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const lengthOfLongestSubstring = (s) => {
+    var startStringObject = 0;
+    var output = 0;
+    var map = new Map();
+    var length = s.length;
+    // using for loop method
+    for (let x = 0; x < length; x++) {
+        var characterObject = s[x];
+        // using if statement
+        if(map.get(characterObject) >= startStringObject) 
+            startStringObject = map.get(characterObject) + 1;
+        map.set(characterObject, x);
+        // using if statement
+        if (x - startStringObject + 1 > output)
+            output = x - startStringObject + 1;
+    }
+    return output;
+};
 
 
 
