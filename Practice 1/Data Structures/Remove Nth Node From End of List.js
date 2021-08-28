@@ -31,6 +31,33 @@ The number of nodes in the list is sz.
 
 SOLUTION:
 
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+const removeNthFromEnd = (head, n)  => {
+    var leftHand, beforePass, rightHand = head;
+    leftHand = beforePass = {next : head};
+    // while conditions
+    while (n--) rightHand = rightHand.next;
+    // while conditions
+    while(rightHand) {
+        rightHand = rightHand.next;
+        leftHand = leftHand.next;
+    }
+    leftHand.next = leftHand.next.next;
+    return beforePass.next;
+    
+    
+};
 
 
 
