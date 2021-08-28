@@ -29,7 +29,30 @@ s consists of lowercase English letters.
 
 SOLUTION:
 
-
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const countSubstrings = (s) => {
+    let countSubstringResult = 0;
+    let length = s.length;
+    // using for loop method 
+    for(let x = 0; x < length; x++) {
+        // for loop method
+        for(let y = x; y < x + 2; y++) {
+            let lastString = x;
+            let returnString = y;
+            // using while conditions
+            while(lastString >= 0 && returnString < length && s[lastString] === s[returnString]) {
+                countSubstringResult++;
+                lastString--;
+                returnString++;                
+            }
+            
+        }
+    }
+    return countSubstringResult;
+};
 
 
 
