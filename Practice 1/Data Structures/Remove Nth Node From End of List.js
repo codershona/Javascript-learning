@@ -54,9 +54,7 @@ const removeNthFromEnd = (head, n)  => {
         leftHand = leftHand.next;
     }
     leftHand.next = leftHand.next.next;
-    return beforePass.next;
-    
-    
+    return beforePass.next;    
 };
 
 
