@@ -35,5 +35,42 @@ s and t consist of uppercase and lowercase English letters.
 
 SOLUTION:
 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {string}
+ */
+const minWindow = (s, t) => {
+    let map = {};
+    t.split('').forEach((c) => map[c] = (map[c] || 0) + 1);
+    
+    // remaining the match count
+    let countOne = t.length;
+    let last = 0;
+    let remain = 0;
+    let start = 0;
+    let minimumLength = Infinity;
+    let length = s.length;
+    // using while conditions
+    while(remain < length) {
+        // if conditions
+        if(map[s[remain++]]-- > 0) countOne --;
+        // using while conditions
+        while(countOne === 0) {
+            // valid: if statement
+            if(remain - last < minimumLength) {
+                minimumLength = remain - last;
+                start = last;              
+            }
+            // if conditions
+            if(map[s[last++]]++ === 0)
+                countOne++;           
+        }
+        
+    }
+    // variablename = (condition) ? value1:value2 ----> : called condition
+    return minimumLength === Infinity ? '' : s.substr(start, minimumLength);   
+};
+
 
 EXPLANATION:
