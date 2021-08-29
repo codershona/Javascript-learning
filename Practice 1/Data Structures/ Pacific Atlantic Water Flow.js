@@ -35,6 +35,54 @@ n == heights[r].length
 
 SOLUTION:
 
+/**
+ * @param {number[][]} heights
+ * @return {number[][]}
+ */
+var pacificAtlantic = function(heights) {
+    let result = [];
+    let minimum = -Infinity;
+    let rowSide = heights.length;
+    let columnSide = heights[0].length;
+    let pacificOcean = new Array(rowSide).fill().map(() => new Array(columnSide).fill(0));
+    let atlanticOcean = new Array(rowSide).fill().map(() => new Array(columnSide).fill(0));
+    // using for loop method left and right
+    for(let rowStatement = 0; rowStatement < rowSide; rowStatement++) {
+        depthFirstSearch(heights, rowStatement, 0, minimum, pacificOcean)
+        // put rowStatement must otherwise cause errors
+        depthFirstSearch(heights, rowStatement, heights[0].length - 1, minimum, atlanticOcean)
+    }
+    // using for loop method top and bottom
+    for(let columnStatement = 0; columnStatement < columnSide; columnStatement++) {
+        depthFirstSearch(heights, 0, columnStatement, minimum, pacificOcean)
+        depthFirstSearch(heights, heights.length - 1, columnStatement, minimum, atlanticOcean)
+    }
+    // using for loop method
+    for(let rowStatement = 0; rowStatement < rowSide; rowStatement++) {
+        // using for loop method
+        for(let columnStatement = 0; columnStatement < columnSide; columnStatement++) {
+            // if conditions
+            if(pacificOcean[rowStatement][columnStatement] == 1 && atlanticOcean[rowStatement][columnStatement] == 1) {
+                result.push([rowStatement, columnStatement])
+            }
+        }
+    }
+    return result;
+};
+ 
+const depthFirstSearch = (heights, x, y, previousValue, Ocean) => {
+    // using if conditions
+    if (x < 0 || y < 0 || x > heights.length - 1 || y > heights[0].length - 1) return;
+    if(heights[x][y] < previousValue) return;
+    if(Ocean[x][y] == 1) return;
+    // process call 
+    Ocean[x][y] = 1;
+    // called function as needed
+    depthFirstSearch(heights, x - 1, y, heights[x][y], Ocean);
+    depthFirstSearch(heights, x + 1, y, heights[x][y], Ocean);
+    depthFirstSearch(heights, x, y - 1, heights[x][y], Ocean);
+    depthFirstSearch(heights, x, y + 1, heights[x][y], Ocean);
+}
 
 
 
