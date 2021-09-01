@@ -3,8 +3,6 @@
 
 Given the head of a singly linked list, reverse the list, and return the reversed list.
 
- 
-
 Example 1:
 
 
@@ -19,18 +17,13 @@ Example 3:
 
 Input: head = []
 Output: []
- 
 
 Constraints:
 
 The number of nodes in the list is the range [0, 5000].
 -5000 <= Node.val <= 5000
  
-
 Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
-
-
-
 
 SOLUTION:
 
@@ -64,3 +57,4 @@ const reverseList = (head) => {
 
 EXPLANATION:
 
+Here, the const has reverseList variable which is arrow function with head parameter and now we can execute the code where it has let with earlier variable equall null. Now we can use while conditional statement, where it has head parameter as an condition and to execute the code, it has const next variable which is equal head parameter meber operator woth next variable. Next the head parameter member of next variable is equal earlier variable. Then, earlier variable equal head parameter and then head parameter equal next variable. Finally it return the expression whihc was earlier variable. 
