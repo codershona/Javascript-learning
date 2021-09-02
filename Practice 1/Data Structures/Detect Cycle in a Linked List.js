@@ -6,23 +6,16 @@ There is a cycle in a linked list if there is some node in the list that can be 
 
 Return true if there is a cycle in the linked list. Otherwise, return false.
 
- 
-
 Example 1:
-
 
 Input: head = [3,2,0,-4], pos = 1
 Output: true
 Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
 Example 2:
-
-
 Input: head = [1,2], pos = 0
 Output: true
 Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
 Example 3:
-
-
 Input: head = [1], pos = -1
 Output: false
 Explanation: There is no cycle in the linked list.
@@ -33,14 +26,10 @@ Constraints:
 The number of the nodes in the list is in the range [0, 104].
 -105 <= Node.val <= 105
 pos is -1 or a valid index in the linked-list.
- 
 
 Follow up: Can you solve it using O(1) (i.e. constant) memory?
 
-
-
 SOLUTION:
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -71,5 +60,5 @@ const hasCycle = (head) => {
 };
 EXPLANATION:
 
-
+Here, we had hasCycle const variable where the arrow functions calls head parameter. Now we can execute the code, where we had index and cycle let variable which is equal head parameter. Then, using while conditions here we had index condition 1 and logical AND with index mmber with next as an condition 2. To execute the code block, the index variable condition is equal index member with next and memebr with next. On the other hand, cycle variable is equal cycle variable member with next element conditions. If the statement 1 index variable condition is strict equal cycle variable it will return true. Finally it reutrns the false expression. 
 
