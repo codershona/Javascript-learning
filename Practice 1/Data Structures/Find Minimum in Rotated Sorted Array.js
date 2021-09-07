@@ -10,8 +10,6 @@ Given the sorted rotated array nums of unique elements, return the minimum eleme
 
 You must write an algorithm that runs in O(log n) time.
 
- 
-
 Example 1:
 
 Input: nums = [3,4,5,1,2]
@@ -62,5 +60,5 @@ const findMin = (nums) => {
 
 EXPLANATION:
 
-
+Here, we have const findMin as a variable which call with arrow function to executed with let indexOne and indexTwo variable equal 0 as well as nums parameter member with length array substraction 1. Using while statement , condition 1 indexOne is less than condition 2 indexTwo. To executed code block, maximum has const variable equal Math.floor array prototype floor method which declare indexOne condition 1 addition to indexTwo condition 2 divided by 2. We can if conditional statement, it has nums parameter with maximum variable that is greater than nums parameter indexTwo conditional 2 array as well as indexOne condition 1 equal maximum variable addition to 1. Otherwise, else the indexTwo condition 2 is equal maximum variable. Finally it would be return the nums parameter of indexOne variable expression. 
 
