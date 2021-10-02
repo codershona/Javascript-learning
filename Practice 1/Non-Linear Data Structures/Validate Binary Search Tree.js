@@ -30,6 +30,33 @@ The number of nodes in the tree is in the range [1, 104].
 
 SOLUTION:
 
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isValidBST = (root) => {
+    if(!root)
+       return true
+    return depthFirstSearch(root, Number.MIN_SAFE_INTEGER, Number.MAXIMUM_SAFE_INTEGER)
+    
+    function depthFirstSearch(root, minimum, maximum) {
+        if(!root)
+            return true
+        if(root.val <= minimum || root.val >= maximum)
+            return false
+        return depthFirstSearch(root.left, minimum, root.val) && depthFirstSearch(root.right, root.val, maximum)        
+    }    
+    
+};
+
 
 
 
