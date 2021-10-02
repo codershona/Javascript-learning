@@ -1,3 +1,6 @@
+Invert Binary Tree (EASY)
+
+
 Given the root of a binary tree, invert the tree, and return its root.
 
  
@@ -25,6 +28,35 @@ The number of nodes in the tree is in the range [0, 100].
 
 
 ANSWER:
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = (root) => {
+    if(!root) {
+        return root
+    }
+    let leftSide = invertTree(root.left);
+    let rightSide = invertTree(root.right);
+    
+    root.left = rightSide;
+    root.right = leftSide;
+    
+    return root    
+};
+
+
+EXPLANATION:
+
+
 
 
 
