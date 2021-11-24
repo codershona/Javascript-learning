@@ -1,0 +1,17 @@
+Fizzbuzz
+
+Palindrome
+
+Fibonacci Sequence
+
+Leetcode : 
+* Greatest Common Divisor of Strings, 
+* Candy
+* Find the Winner of the Circular Game
+* Maximum Product of Three Numbers
+* Flatten Nested List Iterator
+* Subarray Sum Equals K
+* Search a 2D Matrix
+* Task Scheduler
+* Maximum Profit in Job Scheduling
+* 
