@@ -30,3 +30,12 @@ Output: -1
 SOLUTION:
 
 
+/**
+ * BFS
+ * * Time Complexity: O(N)
+ * * Space Complexity: O(N)
+ */
+// Runtime: 108 ms, faster than 86.30% of JavaScript online submissions for Shortest Path in Binary Matrix.
+// Memory Usage: 45.5 MB, less than 96.71% of JavaScript online submissions for Shortest Path in Binary Matrix.
+
+
