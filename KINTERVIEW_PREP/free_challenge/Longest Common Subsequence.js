@@ -27,3 +27,7 @@ Explanation: There is no such common subsequence, so the result is 0.
 
 SOLUTION:
 
+Time Complexity: O(N)
+Space Complexity: O(N)
+
+
