@@ -27,5 +27,39 @@ Time complexity: O(m * n)
 Space complexity: O(m * n) -> O(n)
 
 
+const findLength = (nums1, nums2) => {
+    let response = 0;
+    let same;
+    let lastRows = Array(nums2.length);
+    
+    // using for loop method
+    for (let i = 0; i < nums2.length; i++) {
+        same = +(nums1[0] === nums2[i]);
+        lastRows[i] = same;
+        // using if conditions
+        if(same && !response) response = 1;
+    }
+    
+    // using for loop method again
+    for (let j = 1; j < nums1.length; j++) {
+        // again declaring for loop
+        for (let k = nums2.length - 1; k > 0; k--) {
+            same = +(nums1[j] === nums2[k]);
+            // using if conditions
+            if(same) {
+                lastRows[k] = lastRows[k - 1] + 1;
+                response = response > lastRows[k] ? response : lastRows[k];
+            } else {
+                lastRows[k] = 0;
+            }
+        }
+        same = +(nums1[j] === nums2[0]);
+        lastRows[0] = same;
+        if (same && !response)
+            response = 1;
+    }
+    return response;
+};
+
 
 
