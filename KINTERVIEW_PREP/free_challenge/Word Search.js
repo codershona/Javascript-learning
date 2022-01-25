@@ -28,5 +28,11 @@ Follow up: Could you use search pruning to make your solution faster with a larg
 
 SOLUTION:
 
+Time Anaylsis:
+
+Time complexity : O(n^2) 
+
+Space complexity :O(n^2) 
+
 
 
