@@ -26,7 +26,7 @@ Explanation: We need to eliminate at least two obstacles to find such a walk.
 Solution:
 
 /**
- * BFS
+ * BFS(Breadth first search)
  * Time Complexity: O(m*n) --> Worst case traversing all cells
  * Space Complexity: O(m*n) --> Worst case storing all cells
  
@@ -42,5 +42,63 @@ Then, we simply run BFS to find the shortest path which takes O(|V| + |E|) = O(n
 */
 
 
+const shortestPath = (grid, k) => {
+    if (!grid || grid.length === 0)
+        return 0;
+    
+    let rowSideOne = grid.length,
+          columnSideOne = grid[0].length;
+    let orders = [
+        [-1, 0],
+        [1, 0],
+        [0, -1],
+        [0, 1]
+    ];
+    
+    let pathVisit = new Set();
+    pathVisit.add(`0-0-${k}`);
+    
+    let walk = 0, queue = [[0, 0, k]];
+    // Starting coordinates and k
+    while (queue.length > 0) {
+        let nextPath = [];
+        
+        while (queue.length > 0) {
+            let [m, n, waitingK] = queue.pop();
+            if (m === rowSideOne - 1 && n === columnSideOne - 1) 
+                return walk;
+            // Reached destination => return moves
+            
+            // using for loop of method
+            for (let order of orders) {
+                let rowSideTwo = m + order[0],
+                columnSideTwo = n + order[1];
+                // Check for out of bounds or too many obstacles to eliminate
+                
+                if (rowSideTwo < 0 || columnSideTwo < 0 || rowSideTwo >= rowSideOne || columnSideTwo >= columnSideOne || (grid[rowSideTwo][columnSideTwo] === 1 && waitingK === 0)) continue;
+                
+    // Consider a decremented k while discovering next 4 neighbors if obstacle
+                
+        let nowK = grid[rowSideTwo][columnSideTwo] === 1 ? waitingK - 1 : waitingK;
+        let keyOne = `${rowSideTwo} - ${columnSideTwo} - ${nowK}`;
+                
+            // if conditions 
+                // ! means Logical Not
+                if (!pathVisit.has(keyOne)) {
+                    pathVisit.add(keyOne);
+                    nextPath.push([rowSideTwo, columnSideTwo, nowK]);
+                }                                                
+            }            
+        } 
+        queue = nextPath;
+        walk++;
+    }
+    return -1;
+    // return -1 if no path found
+};
 
+
+
+/* Runtime: 424 ms, faster than 46.95% of JavaScript online submissions for Shortest Path in a Grid with Obstacles Elimination.
+Memory Usage: 60.1 MB, less than 56.34% of JavaScript online submissions for Shortest Path in a Grid with Obstacles Elimination */
 
