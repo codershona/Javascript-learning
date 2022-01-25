@@ -15,4 +15,17 @@ Output: 5
 
 SOLUTION:
 
+Time Complexity :
+O(AB)
+O(a × b) where “a” is the size of the first array and “b” is the size of the second array.
+
+Space Complexity :
+O(AB) or O(B)
+O(a × b) where “a” is the size of the first array and “b” is the size of the second array.
+
+Time complexity: O(m * n)
+Space complexity: O(m * n) -> O(n)
+
+
+
 
