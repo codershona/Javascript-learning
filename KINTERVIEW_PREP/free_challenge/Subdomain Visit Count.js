@@ -24,7 +24,33 @@ For the subdomains, we will visit "mail.com" 900 + 1 = 901 times, "com" 900 + 50
 SOLUTION:
 
 
-
+// ! means logical NOT
+// ?? means Nullish Coalescing
+// + as a assignment
+const subdomainVisits = (cpdomains) => {
+    if(!cpdomains)
+        return 0;
+    
+    let map = new Map();
+    // using  for loop method
+    for (let i = 0; i < cpdomains.length; i++) {
+        let [countDomain, urlDomain] = cpdomains[i].split(" ")
+        map.set(urlDomain, +(map.get(urlDomain) ?? 0) + +countDomain)
+                // using while conditions
+                while(urlDomain.indexOf('.') > -1) {
+            urlDomain = urlDomain.slice(urlDomain.indexOf('.') + 1)
+            map.set(urlDomain, +(map.get(urlDomain) ?? 0) + +countDomain)
+        }                
+    }
+        let arrayOne = [];
+        // forEach((value, key) => { /* ... */ } )
+        // using foreach method calls a function once for each array element.
+        // loop for in method
+        map.forEach((countDomain, webDomain) => {
+            arrayOne.push(`${countDomain} ${webDomain}`)
+        })
+      return arrayOne;
+};
 
 
 
