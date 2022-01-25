@@ -23,6 +23,8 @@ For the subdomains, we will visit "mail.com" 900 + 1 = 901 times, "com" 900 + 50
 
 SOLUTION:
 
+Time Complexity: O(N)
+Space Complexity: O(N)
 
 // ! means logical NOT
 // ?? means Nullish Coalescing
