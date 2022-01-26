@@ -47,3 +47,41 @@ SOLUTION:
 
 * If we create a two-dimensional array of size n*n, this will require O(n2) space.
 
+// ++i is prefix increment
+// localeCompare method
+
+const alertNames = (keyName, keyTime)  => {
+    let workerTimes = [];
+    let maps = new Map();
+    let currentTime;
+    let totalTimes;
+    
+    // using for loop method 1
+    for (let i = 0; i < keyName.length; ++i) {
+        currentTime = maps.get(keyName[i]);
+        totalTimes = keyTime[i].split(":").map(j => +j);
+        // using if/else conditions
+        if (!currentTime) {
+            maps.set(keyName[i], [totalTimes[0] * 60 + totalTimes[1]]);
+        } else {
+            currentTime.push([totalTimes[0] * 60 + totalTimes[1]]);
+        }
+    }
+    
+    // using for loop of method 2
+    for (let [workerTime, totalTime] of maps) {
+        totalTime.sort((x, y) => x - y);
+        // using for loop method 3
+        for (let i = 1; i < totalTime.length; ++i) {
+            // here we will use only if conditions
+            if ((totalTime[i] - totalTime[i - 2] <= 60)) {
+                workerTimes.push(workerTime)
+                break;
+            }
+        }
+    }
+    workerTimes.sort((x, y) => x.localeCompare(y))
+    return workerTimes;    
+};
+
+
