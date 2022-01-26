@@ -30,6 +30,8 @@ SOLUTION:
 Space Complexity : O(n)
 Time Complexity : O(n)
 
+* In Tine Complexity, When a function has a single loop, it usually translates into a running time complexity of O(n).
+
 var longestCommonSubsequence = function(text1, text2) {
     const distance = new Array(text2.length + 1).fill(0);
     let prevText = distance.slice();
