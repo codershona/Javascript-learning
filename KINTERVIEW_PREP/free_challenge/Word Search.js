@@ -64,4 +64,59 @@ Space complexity :O(n^2)
 * In general, algorithms that are using matrices typically take N*N memory to store the matrices. For example to rotate a point in N=3 dimensions, you can use a 3x3 rotation matrix.
 
 
+const exist = (board, word) => {
+    let gridFound = false;
+    // using for loop method
+    for (let i = 0; i < board.length; i++) {
+        //again two time we are using for loop methods
+        for (let j = 0; j < board[i].length; j++) {
+            // we are using if conditions 2
+            if(word[0] == board[i][j]) {
+                gridFound = recurse(board, word, i, j);
+                // we are using if conditions 2
+                if(gridFound) {
+                    return true;
+                };
+            }
+        }
+    }
+    return gridFound;    
+};
+
+// creating second function to define the recurse value;
+const recurse = (array, string, i, j) => {
+    string = string.substr(1);
+    // we are using if conditions 3
+    if (string == "") return true;
+    
+    // 1st variable 
+    let count = array[i][j];
+    array[i][j] = '.';
+    
+    // 2nd variable
+    let gridFound = false;
+    
+    // we are using if conditions 4
+    if (i < array.length - 1 && array[i + 1][j] == string[0]) {
+        gridFound = recurse(array, string, i + 1, j);
+    }
+    
+    // we are using if conditions 5
+    
+    if (!gridFound && i > 0 && array[i - 1][j] == string[0]) {
+        gridFound = recurse(array, string, i - 1, j);
+    }
+    
+    // we are using if conditions 6
+    if (!gridFound && j > 0 && array[i][j - 1] == string[0]) {
+        gridFound = recurse(array, string, i, j - 1);
+    }
+    
+    // we are using if conditions 7
+    if (!gridFound && j < array[i].length - 1 && array[i][j + 1] == string[0]) {
+        gridFound = recurse(array, string, i, j + 1)
+    }
+    array[i][j] = count;
+    return gridFound;    
+}
 
