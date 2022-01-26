@@ -64,3 +64,6 @@ const findAnagrams = (s, p) => {
     }
     return result;    
 };
+
+console.log(([0,1,2]));
+console.log(([0,6]));

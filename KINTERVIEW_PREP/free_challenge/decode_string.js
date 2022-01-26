@@ -74,7 +74,9 @@ const decodeString = (s) => {
             output = stackVar.pop() + output;
       }
       return output; // Function returns the value with output
-};  
+}; 
+
+console.log(decodeString("aaabcbc"),("abcabccdcdcdef"));
 
 
 /** 
