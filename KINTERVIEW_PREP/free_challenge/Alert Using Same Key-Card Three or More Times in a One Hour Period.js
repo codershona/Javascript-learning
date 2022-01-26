@@ -25,3 +25,25 @@ Explanation: "bob" used the keycard 3 times in a one-hour period ("21:00","21:20
 
 SOLUTION:
 
+### How to calculate the time complexity of our code when we have the following elements:
+
+* Basic operations like assignments, bit, and math operators.
+* Loops and nested loops
+* Function invocations and recursions.
+
+## Time Complexity : O(n^2)
+
+* Nested loops statements and Logarithmic Time Loops.
+* However, if only fn1 and fn2 are constant and fn3 has a runtime of O(n^2).
+* In general, you will have something like this:
+1 T(n) = n * [ t(fn1()) + n * [ t(fn2()) + n * [ t(fn3()) ] ]
+
+
+## Space Complexity: O(n^2)
+
+* Space Complexity = Auxiliary space + Space use by input values.
+
+* O(n^2) – square/polynomial complexity – space complexity grows proportionally to the square of the input size.
+
+* If we create a two-dimensional array of size n*n, this will require O(n2) space.
+
