@@ -28,3 +28,39 @@ Time Complexity : O(n)
 Space Complexity: O(n)
 
 
+const findAnagrams = (s, p) => {
+    let sStr = s.length;
+    let pStr = p.length;
+    let result = [];
+    
+    let sArr = new Array(26).fill(0);
+    let pArr = new Array(26).fill(0);
+    
+    // using for loop method 1
+    for (let i = 0; i < pStr; i++) {
+        sArr[s.charCodeAt(i) - 97]++;
+        pArr[p.charCodeAt(i) - 97]++;
+    }
+    
+    // using for loop method 2
+    for (let i = 0; i < sStr; i++) {
+        // using if conditions
+        if (wasAnagram(sArr, pArr)) {
+            result.push(i);
+        }
+            sArr[s.charCodeAt(i) - 97]--
+            sArr[s.charCodeAt(i + pStr) - 97]++;
+    }    
+    // creating wasAnagram ES5 function
+    function wasAnagram(sArr ,pArr) {
+        // using for loop method 3
+        for (let i = 0; i < pArr.length; i++) {
+            // using only if conditions
+            if(sArr[i] !== pArr[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    return result;    
+};
