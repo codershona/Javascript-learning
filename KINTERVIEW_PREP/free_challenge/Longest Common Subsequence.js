@@ -30,6 +30,23 @@ SOLUTION:
 Space Complexity : O(n)
 Time Complexity : O(n)
 
-
+var longestCommonSubsequence = function(text1, text2) {
+    const distance = new Array(text2.length + 1).fill(0);
+    let prevText = distance.slice();
+    
+    // using for loop methods
+    for (let i = 1; i <= text1.length; i++) {
+        for (let j = 1; j <= text2.length; j++) {
+            // using if/else conditions
+            if (text1[i - 1] == text2[j - 1]) {
+                distance[j] = 1 + prevText[j - 1];
+            } else {
+                distance[j] = Math.max(distance[j], distance[j - 1]);
+            }
+        }
+        prevText = distance.slice();
+    }
+    return distance[text2.length];
+};
 
 
