@@ -24,7 +24,7 @@ Explanation: The endWord "cog" is not in wordList, therefore there is no valid t
 
 SOLUTION:
 
-Time complexity : 
+Time complexity : O(N)
 
-Space complexity : 
+Space complexity : O(N^2)
 

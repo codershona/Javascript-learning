@@ -21,7 +21,7 @@ Explanation: Both "apply" and "apple" can be built from other words in the dicti
 
 SOLUTION:
 
-Time complexity : 
+Time complexity : O(N)
 
-Space complexity : 
+Space complexity : O(N)
 
