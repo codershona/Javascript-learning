@@ -23,3 +23,21 @@ Output: 23
 
 SOLUTION:
 
+Oneliner Solution Works:
+
+var calculate = function(s) {
+    return eval(s);
+};
+
+
+Time and Space Anaylsis: Stack
+
+Time Complexity : O(n) 
+
+The time complexity of it is O(n) because we just need to run it once. 
+
+Space Compleity : O(n) 
+ 
+The space complexity of it is O(n) because the load in the stack is proportional in length of the input.
+
+
