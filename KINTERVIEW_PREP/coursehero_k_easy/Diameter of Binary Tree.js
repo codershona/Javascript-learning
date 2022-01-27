@@ -27,6 +27,29 @@ Time complexity : O(N) [dfs]
 
 Space complexity : O(N) 
 
+const diameterOfBinaryTree = (root) => {
+    let longerPath = 0;
+    
+    deep(root);
+    
+    return longerPath;
+    // creating deep function
+    function deep(node) {
+        // using if conditions
+        if (!node) return 0;
+        
+        const left = deep(node.left);
+        const right = deep(node.right);
+        
+        longerPath = Math.max(longerPath, left + right);
+        // deep root
+        return Math.max(left, right) + 1;
+    }
+    
+};
+
+console.log(diameterOfBinaryTree);
+
 
 
 
