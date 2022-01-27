@@ -26,6 +26,7 @@ Output: 5
 
 SOLUTION:
 
+* Time and Space complexity is stack.
 
 Time Complexity : O(n)
 
@@ -55,6 +56,55 @@ Auxiliary Space is the extra/temporary space used by an algorithm.
 
 
 
+
+const calculate = (s) => {
+    let int = 0;
+    let currentStr = 0;
+    let result = 0;
+    let lastNum = 0;
+    let leftStr = '+';
+    
+    // using while conditions
+    while (int <= s.length) {
+        let range = getRange(s[int]);
+        // using if/else/else if conditions
+        if(range !== null) {
+            currentStr = 10 * currentStr + range;
+        } else if (s[int] !== ' ') {
+            // using again nested if conditions
+            if (leftStr === '+') {
+                result += lastNum;
+                lastNum = currentStr;
+               // console.log(stack.push(currentStr));
+            } else if (leftStr === '-') {
+                result += lastNum;
+                lastNum = -currentStr;
+                // console.log(stack.push(-currentStr));
+            } else if (leftStr === '*') {
+                lastNum *= currentStr;
+                // console.log(stack.push(lastNum * currentStr));
+            } else if (leftStr === '/') {
+                lastNum = Math.trunc(lastNum / currentStr);
+                // console.log(Math.trunc(lastNum / currentStr));
+            }
+            currentStr = 0;
+            leftStr = s[int];
+        }
+        int++;
+    }
+    return result + lastNum;
+};
+
+let getRange = (value) => {
+    // using if conditions
+    if (value == null) return null;
+    let intTwo = parseInt(value);
+    return Number.isNaN(intTwo) ? null : intTwo;    
+};
+
+console.log(calculate("3+2*2"));
+console.log(calculate(" 3/2 "));
+console.log(calculate(" 3+5 / 2 "));
 
 
 
