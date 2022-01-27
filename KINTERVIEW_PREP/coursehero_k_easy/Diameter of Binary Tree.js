@@ -23,4 +23,11 @@ Output: 1
 
 SOLUTION:
 
+Time complexity : O(N) [dfs] 
+
+Space complexity : O(N) 
+
+
+
+
 
