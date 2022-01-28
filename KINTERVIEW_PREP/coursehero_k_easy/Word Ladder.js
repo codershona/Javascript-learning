@@ -28,3 +28,37 @@ Time complexity : O(N)
 
 Space complexity : O(N^2)
 
+const ladderLength = (beginWord, endWord, wordList) => {
+    let wordDic = new Set(wordList);
+    let startWord = [beginWord];
+    let task = 1;
+    
+    // using while conditions
+    while(startWord.length) {
+        let later = [];
+        
+        // using for loop of method
+        for(let x of startWord) {
+            // using if conditions
+            if (x == endWord) return task;
+            // using for loop method
+            for (let i = 0; i < x.length; i++) {
+                // using for loop again
+                for (let j = 0; j < 26; j++) {
+                    let x2 = x.slice(0, i) + String.fromCharCode(97 + j) + x.slice(i + 1);
+                    // using if condtions again
+                    if(wordDic.has(x2)) {
+                        later.push(x2);
+                        wordDic.delete(x2);
+                    }
+                }
+            }
+        }
+        startWord = later;
+        ++task;
+    }
+    return 0;
+};
+
+
+
