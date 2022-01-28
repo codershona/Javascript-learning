@@ -25,3 +25,15 @@ Time complexity : O(N)
 
 Space complexity : O(N)
 
+
+* sort using bucket sort
+
+* iterate and save into hashset, only if word (excluding the last character of word) is present in the hashset.
+
+* Assign the word to 'res', only if current's word length is more than res.length, or if it is smaller in lexicographical order;
+
+* return res;
+
+
+
+
