@@ -36,4 +36,39 @@ Space complexity : O(N)
 
 
 
-
+/**
+ * k - prep
+ * array.forEach(function(currentValue, index, arr), thisValue)
+ */
+const longestWord = (words) => {
+    let arrOne = "";
+    let map = {};
+    let newArray = new Array(31).fill('');
+    
+    // using for each method where currentValue is required for the value in the current element
+    words.forEach((currentValue => {
+        newArray[currentValue.length] += " " + currentValue;
+    }))
+    
+    words = newArray.join(' ').split(" ").filter(currentValue => currentValue);
+    
+    // using for loop methods
+    for (let i = 0; i < words.length; i++){
+        //using if/else conditions
+        if(words[i].length === 1) {
+            map[words[i]] = words[i].length;
+        } else {
+            // using if conditions again
+            if(map[words[i].slice(0, -1)] !== undefined) {
+                map[words[i]] = words[i].length;
+            }
+        }
+        // third time using if conditions
+        if(map[words[i]]) {
+            // fourth time if conditions
+            if (!arrOne || words[i].length > arrOne.length || arrOne.localeCompare(words[i]) > 0) arrOne = words[i];
+            // if (!arrOne || words[i].length > arrOne.length || arrOne.localeCompare(words[i]) > 0) arrOne = words[i];
+        }
+    }
+    return arrOne;  
+};
