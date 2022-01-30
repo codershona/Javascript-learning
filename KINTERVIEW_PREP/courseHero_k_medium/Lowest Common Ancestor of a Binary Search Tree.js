@@ -30,4 +30,27 @@ Output: 2
 
 SOLUTION:
 
+Time Complexity: O(N)
+
+Space Complexity: O(1)
+
+* O(1) Complexity: We consider constant space complexity when the program doesn't contain any loop, recursive function, or call to any other functions. 
+
+* O(n) Complexity: We consider the linear space complexity when the program contains any loops.
+
+
+/**
+ * k-prep
+ */
+const lowestCommonAncestor = (root, p, q) => {
+    // while conditons
+    while(root !== null) {
+        // if/else/else if conditions
+        if(p.val < root.val && q.val < root.val) root = root.left;
+        else if (p.val > root.val && q.val > root.val) root = root.right;
+        else return root;
+    }    
+};
+
+
 
