@@ -26,10 +26,12 @@ Output: 1
 
 Solution:
 
-Time Complexity:
+Time Complexity: O(N)
 
 
-Space Complexity:
+Space Complexity: O(N)
+
+
 
 
 
