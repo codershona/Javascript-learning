@@ -31,6 +31,21 @@ Time Complexity: O(N)
 
 Space Complexity: O(N)
 
+const lowestCommonAncestor = (root, p, q) => {
+    let node = new TreeNode();
+    // need to use another function
+    lowestCommonAncestorDes(root, p, q, node);
+    return node.left;    
+};
+
+function lowestCommonAncestorDes(root, p, q, node) {
+    if (root === null) return false;
+    let one = lowestCommonAncestorDes(root.left, p, q, node) ? 1 : 0;
+    let two = lowestCommonAncestorDes(root.right, p, q, node) ? 1 : 0;
+    let three = root === q || root === p ? 1 : 0;
+    if (one + two + three >= 2) node.left = root;
+    return one + two + three === 1;
+};
 
 
 
