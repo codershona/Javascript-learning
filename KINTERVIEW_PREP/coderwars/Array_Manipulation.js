@@ -14,5 +14,8 @@ Note: Return a new array, rather than modifying the passed array.
 SOLUTION:
 
 const arrayManip = array => 
-  array.map((value, item) => array.slice(item).filter(a => a > value).sort((x, y) => x - y)[0] || - 1);
+  array.map((value, item) => 
+  array.slice(item)
+  .filter(a => a > value)
+  .sort((x, y) => x - y)[0] || - 1);
 

@@ -53,8 +53,8 @@ const findLength = (nums1, nums2) => {
                 lastRows[k] = 0;
             }
         }
-        same = +(nums1[j] === nums2[0]);
         lastRows[0] = same;
+        same = +(nums1[j] === nums2[0]);
         if (same && !response)
             response = 1;
     }
