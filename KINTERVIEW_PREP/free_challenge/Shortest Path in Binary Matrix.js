@@ -43,12 +43,12 @@ SOLUTION:
   * q means queue
   * n 
   * for of loop methods to pass the value of the iterable objects
-  * && measn Logical AND
-  * || measn Logical OR
+  * && means Logical AND
+  * || means Logical OR
   * !== means strict unequal
   * < means less than
   * >= means greater than or, equal
-  * 
+  * ! means logical NOT
 */
 
 const shortestPathBinaryMatrix = (grid) => {
