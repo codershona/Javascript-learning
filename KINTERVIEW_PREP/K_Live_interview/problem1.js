@@ -1,7 +1,6 @@
 `
 
 
-
 You are going on a camping trip, but before you leave you need to buy groceries. To optimize your time spent in the store, instead of buying the items from your shopping list in order, you plan to buy everything you need from one department before moving to the next.
 
 Given an unsorted list of products with their departments and a shopping list, return the time saved in terms of the number of department visits eliminated.
@@ -73,19 +72,44 @@ const list4 = ['Milk', 'Flour', 'Chocolate Milk', 'Pasta Sauce'];
 const list5 = ['Cheese', 'Potatoes', 'Blueberries', 'Canned Tuna'];
 
 
-
+Real Solution:
 
 const shopping = (products, list) => {
+//   console.log(list1);
+//   console.log(list2);
+//   console.log(list3);
+//   console.log(list4);
+//   console.log(list5);
+//   console.log(products);
+  
+  list.forEach((value, index, item) => {
+    console.log(value, index, item);
+//     console.log(list2[5])
+//     console.log(list3[5])
+//     console.log(list1[5])
+//     console.log(list5[4])
+//     console.log(list4[4])
+  })
+}
+// shopping(products, list1);
+shopping(products, list1, list2, list3, list4, list5);
+
+
+
+
+
+
+// const shopping = (products, list) => {
      
-  list.forEach((item) => {
-      console.log(item);
-      // Get me department of blueberry;
+//   list.forEach((item) => {
+//       console.log(item);
+//       // Get me department of blueberry;
     
-      // Iterate over my products and find blueberyy is belonging to which departement.
-    products.forEach(())
+//       // Iterate over my products and find blueberyy is belonging to which departement.
+//     products.forEach(())
     
       
-  });
-}
+//   });
+// }
 
-shopping(products, list1);
+// shopping(products, list1);
