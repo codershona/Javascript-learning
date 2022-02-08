@@ -76,3 +76,15 @@ console.log(findPears);
 
 const findPears2 = items.filter(item => item.includes("pears"));
 console.log(findPears2);
+
+
+const items = ["apples", "bananas", "pears"];
+
+function printValue(value, index){ 
+  if(value != "bananas"){
+    console.log(value, index);
+  }
+ 
+}
+
+items.forEach(printValue);
