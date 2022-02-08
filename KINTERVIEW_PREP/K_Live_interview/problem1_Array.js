@@ -133,10 +133,7 @@ const shopping = (products, list) => {
       console.log(item);
       // Get me department of blueberry;
     
-      // Iterate over my products and find blueberyy is belonging to which departement.
-    products.forEach(())
-    
-      
+      // Iterate over my products and find blueberyy is belonging to which departement.      
   });
 }
 
