@@ -17,12 +17,13 @@ const products = [
 ];
 // products.forEach(product => console.log(product.name));
 
-products.forEach((item) => {
+products.forEach((item, index, price) => {
   console.log(item.name);
   console.log(item.price);
+  item[index] = price * 2
   console.log(item.color);
   console.log(item.brand);
-})
+});
 
 
 
