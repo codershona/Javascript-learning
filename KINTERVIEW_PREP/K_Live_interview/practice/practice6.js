@@ -88,3 +88,11 @@ function printValue(value, index){
 }
 
 items.forEach(printValue);
+
+
+
+const items = ["apples", "bananas", "pears"];
+
+const findBananas = items.find(item => item == "bananas");
+
+console.log(findBananas);
