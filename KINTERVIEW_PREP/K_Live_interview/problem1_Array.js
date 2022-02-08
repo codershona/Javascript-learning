@@ -75,23 +75,23 @@ Real Solution:
 // forEach method:
 
 const shopping = (products, list) => {
-//   console.log(list1);
-//   console.log(list2);
-//   console.log(list3);
-//   console.log(list4);
-//   console.log(list5);
-//   console.log(products);
+  console.log(list1);
+  console.log(list2);
+  console.log(list3);
+  console.log(list4);
+  console.log(list5);
+  console.log(products);
   
   list.forEach((value, index, item) => {
     console.log(value, index, item);
-//     console.log(list2[5])
-//     console.log(list3[5])
-//     console.log(list1[5])
-//     console.log(list5[4])
-//     console.log(list4[4])
+     console.log(list2[5])
+    console.log(list3[5])
+    console.log(list1[5])
+     console.log(list5[4])
+     console.log(list4[4])
   })
 }
-// shopping(products, list1);
+ shopping(products, list1);
 shopping(products, list1, list2, list3, list4, list5);
 
 
@@ -107,37 +107,37 @@ const shopping = (products, list) => {
 }
   
   
-//   console.log(list1);
-//   console.log(list2);
-//   console.log(list3);
-//   console.log(list4);
-//   console.log(list5);
-//   console.log(products);
+   console.log(list1);
+  console.log(list2);
+  console.log(list3);
+   console.log(list4);
+   console.log(list5);
+   console.log(products);
   
-//   list.forEach((value, index, item) => {
-//     console.log(value, index, item);
-//     console.log(list2[5])
-//     console.log(list3[5])
-//     console.log(list1[5])
-//     console.log(list5[4])
-//     console.log(list4[4])
-//   })
+  list.forEach((value, index, item) => {
+     console.log(value, index, item);
+    console.log(list2[5])
+     console.log(list3[5])
+     console.log(list1[5])
+     console.log(list5[4])
+   console.log(list4[4])
+  })
 }
-// shopping(products, list1
+ shopping(products, list1
 
 
-// Instructor solution:
-// const shopping = (products, list) => {
+Instructor solution:
+const shopping = (products, list) => {
      
-//   list.forEach((item) => {
-//       console.log(item);
-//       // Get me department of blueberry;
+  list.forEach((item) => {
+      console.log(item);
+      // Get me department of blueberry;
     
-//       // Iterate over my products and find blueberyy is belonging to which departement.
-//     products.forEach(())
+      // Iterate over my products and find blueberyy is belonging to which departement.
+    products.forEach(())
     
       
-//   });
-// }
+  });
+}
 
-// shopping(products, list1);
+shopping(products, list1);
