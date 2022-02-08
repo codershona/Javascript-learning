@@ -61,3 +61,18 @@ numbers.filter(num => num % 2 !== 0).forEach(num => {
 })
 
 //output : 1, 3, 5
+
+
+
+const items = ["apples", "bananas", "pears", "bananas"];
+
+const findBanana= items.filter(item => item.includes("bananas"));
+
+console.log(findBanana);
+
+const findPears = items.find(item => item.includes("pears"));
+console.log(findPears);
+
+
+const findPears2 = items.filter(item => item.includes("pears"));
+console.log(findPears2);
