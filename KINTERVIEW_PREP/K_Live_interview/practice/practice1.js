@@ -1,7 +1,4 @@
 // practice Array Manipulation
-
-
-
 // Array method 1: forEach() Method
 
 const arr = [1, 2, 6, 8, 10, 12, 14];
