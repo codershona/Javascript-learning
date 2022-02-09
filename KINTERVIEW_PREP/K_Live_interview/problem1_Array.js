@@ -123,7 +123,7 @@ const shopping = (products, list) => {
    console.log(list4[4])
   })
 }
- shopping(products, list1
+ shopping(products, list1)
 
 
 Instructor solution:
