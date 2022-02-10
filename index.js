@@ -1,37 +1,48 @@
-// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233....
-let calculate = 0;
-function fibonacci(v) { // O(2^n)
-  calculate++;
-  if (v < 2) {
-    return v
-  }
-  return fibonacci(v-1) + fibonacci(v-2);
+// The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
+
+// F(0) = 0, F(1) = 1
+// F(n) = F(n - 1) + F(n - 2), for n > 1.
+// Given n, calculate F(n).
+
+// Example 1:
+
+// Input: n = 2
+// Output: 1
+// Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+// Example 2:
+
+// Input: n = 3
+// Output: 2
+// Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+// Example 3:
+
+// Input: n = 4
+// Output: 3
+// Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+
+const n = 2
+expected : 1
+const n = 3
+expected: 2
+const n = 4
+expected: 3
+
+console.log(n);
+const n = 2
+const fib = (n) => {
+  return n == 0 ? 0 : n == 1 ? 1 : fib(n - 1) + fib(n - 2);
 }
+console.log(fib(n)); // expected 1
 
-function fibonacciMasters() {
-  let caching = {};
-
-  return function fibonacci2(v) { // O(n)
-    calculate++;
-    if (v in caching) {
-      return caching[v];
-    } else {
-      if (v < 2) {
-        return v;
-      } else {
-      caching[v] = fibonacci2(v-1) + fibonacci2(v-2);
-      return caching[v];
-      }
-    }
-  }
+const n = 3
+const fib = (n) => {
+  return n == 0 ? 0 : n == 1 ? 1 : fib(n - 1) + fib(n - 2);
 }
+console.log(fib(n));  // expected 2
 
-
-const fasterFibonacci = fibonacciMasters();
-console.log('Slows up', fibonacci(10));
-console.log('BP', fasterFibonacci(100));
-console.log('BP', fasterFibonacci(10));
-console.log('BP', fasterFibonacci(1));
-
-console.log('we did that ' + calculate + ' calculate');
+const n = 4
+const fib = (n) => {
+  return n == 0 ? 0 : n == 1 ? 1 : fib(n - 1) + fib(n - 2);
+}
+console.log(fib(n)); //expected 4
 
