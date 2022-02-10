@@ -26,8 +26,8 @@ SOLUTION:
 const arr = [1,2,3,4,5,6,7,8]
 Expected: 5
 
-
-
+Time Complexity: O(n^2) DP
+Space Complexity: O(n^2)
 
 
 
