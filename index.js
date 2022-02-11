@@ -1,48 +1,30 @@
-// The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
+Given an integer k, return the minimum number of Fibonacci numbers whose sum is equal to k. The same Fibonacci number can be used multiple times.
 
-// F(0) = 0, F(1) = 1
-// F(n) = F(n - 1) + F(n - 2), for n > 1.
-// Given n, calculate F(n).
+The Fibonacci numbers are defined as:
 
-// Example 1:
+F1 = 1
+F2 = 1
+Fn = Fn-1 + Fn-2 for n > 2.
+It is guaranteed that for the given constraints we can always find such Fibonacci numbers that sum up to k.
+ 
 
-// Input: n = 2
-// Output: 1
-// Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
-// Example 2:
+Example 1:
 
-// Input: n = 3
-// Output: 2
-// Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
-// Example 3:
+Input: k = 7
+Output: 2 
+Explanation: The Fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, ... 
+For k = 7 we can use 2 + 5 = 7.
+Example 2:
 
-// Input: n = 4
-// Output: 3
-// Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+Input: k = 10
+Output: 2 
+Explanation: For k = 10 we can use 2 + 8 = 10.
+Example 3:
 
-const n = 2
-expected : 1
-const n = 3
-expected: 2
-const n = 4
-expected: 3
+Input: k = 19
+Output: 3 
+Explanation: For k = 19 we can use 1 + 5 + 13 = 19.
 
-console.log(n);
-const n = 2
-const fib = (n) => {
-  return n == 0 ? 0 : n == 1 ? 1 : fib(n - 1) + fib(n - 2);
-}
-console.log(fib(n)); // expected 1
 
-const n = 3
-const fib = (n) => {
-  return n == 0 ? 0 : n == 1 ? 1 : fib(n - 1) + fib(n - 2);
-}
-console.log(fib(n));  // expected 2
 
-const n = 4
-const fib = (n) => {
-  return n == 0 ? 0 : n == 1 ? 1 : fib(n - 1) + fib(n - 2);
-}
-console.log(fib(n)); //expected 4
 
