@@ -30,7 +30,26 @@ Time Complexity: O(n^2) DP
 Space Complexity: O(n^2)
 
 
-
+const lenLongestFibSubseq = (arr) => {
+    let map = {};
+    let M = arr.length;
+    let value = [...Array(M)].map(m => Array(M).fill(2));
+    let max = 0;
+    
+    // for loop method 
+    for(let i = 0; i < M; i++) {
+        map[arr[i]] = i;
+        // nested for loops
+        for (let j = 0; j < i; j++) {
+            // if conditions
+            if(arr[i] - arr[j] < arr[j] && arr[i] - arr[j] in map) {
+        value[j][i] = Math.max(value[j][i], 1 + value[map[arr[i] - arr[j]]][j]);
+            }
+            max = Math.max(max, value[j][i]);
+        }
+    }
+    return max === 2 ? 0 : max;    
+};
 
 
 
