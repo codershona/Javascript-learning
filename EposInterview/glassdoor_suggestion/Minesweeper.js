@@ -33,6 +33,47 @@ Output: [["B","1","E","1","B"],["B","1","X","1","B"],["B","1","1","1","B"],["B",
 
 
 
+const updateBoard = (board, click) => {
+    const A = board.length;
+    const D = board[0].length;
+    const clickA = click[0];
+    const clickD = click[1];
+    
+     if(board[clickA][clickD] == 'M') {
+    board[clickA][clickD] = 'X';
+    return board; // This will hit 'M'
+  }
+   
+   if(board[clickA][clickD] == 'B') {
+       return board;
+   }
+    
+    let tempA = clickA - 1;
+    let tempD = clickD - 1;
+    let mineClick = 0;
+    
+    for (let i = tempA; i < tempA + 3; i++) {
+        for (let j = tempD; j < tempD + 3; j++) {
+            if (i < 0 || i >= A || j < 0 || j >= D) continue;
+            if (board[i][j] == 'M') mineClick++; // This will hit 'E'
+        }
+    }
+    
+    if(mineClick != 0) {
+        board[clickA][clickD] = mineClick.toString();
+        return board;
+    }
+     board[clickA][clickD] = 'B'
+    
+    for (let i = tempA; i < tempA + 3; i++) {
+        for (let j = tempD; j < tempD + 3; j++) {
+            if (i < 0 || i >= A || j < 0 || j >= D) continue;
+            board = updateBoard(board, [i, j]);
+        }
+    }
+    return board;
+};
+
 
 
 
