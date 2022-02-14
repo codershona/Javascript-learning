@@ -30,8 +30,7 @@ Example 2:
 Input: board = [["B","1","E","1","B"],["B","1","M","1","B"],["B","1","1","1","B"],["B","B","B","B","B"]], click = [1,2]
 Output: [["B","1","E","1","B"],["B","1","X","1","B"],["B","1","1","1","B"],["B","B","B","B","B"]]
 
-
-
+SOLUTION: O(n)
 
 const updateBoard = (board, click) => {
     const A = board.length;
