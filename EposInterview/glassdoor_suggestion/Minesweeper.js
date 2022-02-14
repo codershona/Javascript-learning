@@ -1,4 +1,4 @@
-// Minesweeper ====
+ // Minesweeper ====
 
 Let's play the minesweeper game (Wikipedia, online game)!
 
