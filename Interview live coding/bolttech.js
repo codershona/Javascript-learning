@@ -11,6 +11,9 @@ for (j = 0; j < 2; j++) {
     buf[j]();
 } 
 
+Resources:
+
+https://codeutility.org/javascript-closure-inside-loops-simple-practical-example-stack-overflow/
 
 Task 2:
 
@@ -27,6 +30,12 @@ var myObject = {
     }
 };
 myObject.func();
+
+Resources:
+
+https://www.toptal.com/javascript/interview-questions
+
+https://medium.com/@manik89/javascript-interview-questions-2-f84e7dfb77cc
 
 Task 3:
 
